@@ -8,6 +8,7 @@ class Alpine extends Component
 {
     public $count = 0;
     public $open = false;
+    public $mensaje = null;
 
     public function incrementar() {
         $this->count++;

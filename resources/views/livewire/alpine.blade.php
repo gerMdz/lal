@@ -1,4 +1,13 @@
 <div >
+
+    <div x-data="{mensaje: $wire.mensaje}">
+        <input type="text" x-model="mensaje">
+        <button @click="$refs.msj.innerText=mensaje">
+            Enviar
+        </button>
+        <p x-ref="msj"></p>
+
+    </div>
     <p>Contador: {{$count}} </p>
 
     <button wire:click="incrementar">

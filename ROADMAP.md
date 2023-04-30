@@ -80,4 +80,9 @@ function -> Podemos sacar de la parte central las funciones y agregarlas en un s
 ###### Uso
 x-bind: -> Cambiar atributos html.
 ':' -> reemplaza a 'x-bind:' en los atributos.
-'x-on:' pude ser reemplazo por '@' 
+'x-on:' pude ser reemplazo por '@'
+
+#### Cap 4
+##### Sincronizar inputs (x-model)
+###### Uso
+x-model: -> Permite sincronizar los valores de un input con las variables de alpinejs.
