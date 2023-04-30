@@ -66,3 +66,11 @@ $wire -> Nos permite acceder a las propiedades definidas en el componente que re
 wire: -> Nos permite llamar una función dentro del componente.
 .defer: -> Nos permite llamar asíncronamente una función dentro de la vista, pero una vez que se realice una acción en
 el componente.
+
+
+#### Cap 2
+##### Inicializar componentes con x-data y x-ini
+###### Uso
+x-data -> Se puede definir desde la vista.
+function -> Podemos sacar de la parte central las funciones y agregarlas en un script específico.
+.away -> Directiva, no se bien que hace.

@@ -7,6 +7,7 @@ use Livewire\Component;
 class Alpine extends Component
 {
     public $count = 0;
+    public $open = false;
 
     public function incrementar() {
         $this->count++;

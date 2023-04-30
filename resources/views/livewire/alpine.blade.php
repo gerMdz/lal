@@ -1,9 +1,27 @@
-<div>
+<div >
     <p>Contador: {{$count}} </p>
 
     <button wire:click="incrementar">
         Aumentar desde el componente
     </button>
+    <div x-data="data()" x-init="start()">
+        <button x-on:click="isOpen()">
+            Menu
+        </button>
+
+        <nav x-show="open" x-on:click.away="close()">
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+        </nav>
+
+
+
+    </div>
+
 
     <div x-data="{count: @entangle('count').defer}">
         <p>
@@ -15,3 +33,21 @@
         </button>
     </div>
 </div>
+
+<script>
+    function data() {
+        return {
+            open:null,
+            start(){
+                this.open = false
+            },
+            isOpen(){
+                this.open = !this.open
+            },
+            close(){
+                this.open = false
+            }
+        }
+    }
+</script>
+
