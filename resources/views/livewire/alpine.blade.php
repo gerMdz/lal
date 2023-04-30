@@ -5,11 +5,11 @@
         Aumentar desde el componente
     </button>
     <div x-data="data()" x-init="start()">
-        <button x-on:click="isOpen()">
+        <button :disabled="open" @click="isOpen()">
             Menu
         </button>
 
-        <nav x-show="open" x-on:click.away="close()">
+        <nav class="hidden" :class="{'hidden':!open}") @click.away="close()">
                 <ul>
                     <li>Item 1</li>
                     <li>Item 2</li>

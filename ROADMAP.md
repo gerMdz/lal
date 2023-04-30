@@ -74,3 +74,10 @@ el componente.
 x-data -> Se puede definir desde la vista.
 function -> Podemos sacar de la parte central las funciones y agregarlas en un script específico.
 .away -> Directiva, no se bien que hace.
+
+#### Cap 3
+##### Atributos dinámicos (x-bind)
+###### Uso
+x-bind: -> Cambiar atributos html.
+':' -> reemplaza a 'x-bind:' en los atributos.
+'x-on:' pude ser reemplazo por '@' 
