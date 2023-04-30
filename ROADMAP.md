@@ -129,5 +129,4 @@ $refs -> Hace referencia a otro elemento indicando (x-ref) individualizándola p
 * $event.detail -> Toma el valor del evento personalizado.
 
 
-
-###### Next [Cap 6](https://www.youtube.com/watch?v=7UF0WccR0ss)
+###### Next [Cap 2](https://www.youtube.com/watch?v=VkW70aLNCbQ)
