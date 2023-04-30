@@ -1,8 +1,36 @@
-<div >
+<div>
+    <div x-data="cap5()">
+        <ul class="text-center text-gray-800">
+            {{--            <template x-for="producto in productos">--}}
+            {{--                <li>--}}
+            {{--                    <span x-text="producto.name"></span>--}}
+            {{--                    <span x-text="producto.stock"></span>--}}
 
-    <div x-data="{mensaje: $wire.mensaje}">
-        <input type="text" x-model="mensaje">
-        <button @click="$refs.msj.innerText=mensaje">
+            {{--                </li>--}}
+
+            {{--            </template>--}}
+            <template x-for="propiedad in Object.values(propiedades)">
+                <li>
+                    <span x-text="propiedad.name"></span>
+                    <span x-text="propiedad.stock"></span>
+
+                    <template x-if="propiedad.stock <= 5 ">
+                        <span>
+                        (Hacer pedido)
+                        </span>
+                    </template>
+
+
+                </li>
+
+            </template>
+
+        </ul>
+    </div>
+
+    <div x-data="{mensaje: $wire.mensaje}" class="m-1 bg-gray-50">
+        <input type="text" x-model="mensaje" class="form-input border-gray-300 m-1 bg-gray-500 text-white">
+        <button @click="$refs.msj.innerText=mensaje" class="btn btn-primary">
             Enviar
         </button>
         <p x-ref="msj"></p>
@@ -18,15 +46,14 @@
             Menu
         </button>
 
-        <nav class="hidden" :class="{'hidden':!open}") @click.away="close()">
-                <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                    <li>Item 4</li>
-                </ul>
+        <nav class="hidden" :class="{'hidden':!open}" ) @click.away="close()">
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
         </nav>
-
 
 
     </div>
@@ -46,15 +73,67 @@
 <script>
     function data() {
         return {
-            open:null,
-            start(){
+            open: null,
+            start() {
                 this.open = false
             },
-            isOpen(){
+            isOpen() {
                 this.open = !this.open
             },
-            close(){
+            close() {
                 this.open = false
+            }
+        }
+    }
+
+    function cap5() {
+        return {
+            // productos: [
+            //     {
+            //         id: 1,
+            //         name: 'General',
+            //         stock: 5,
+            //     },
+            //     {
+            //         id: 2,
+            //         name: 'Profile',
+            //         stock: 7,
+            //     },
+            //     {
+            //         id: 3,
+            //         name: 'Preguntas',
+            //         stock: 10,
+            //     },
+            //     {
+            //         id: 4,
+            //         name: 'Progreso',
+            //         stock: 14,
+            //     },
+            //
+            // ],
+            // Cmo array de objetos
+            propiedades: {
+                1: {
+                    id: 1,
+                    name: 'General',
+                    stock: 5,
+                },
+                2: {
+                    id: 2,
+                    name: 'Profile',
+                    stock: 7,
+                },
+                3: {
+                    id: 3,
+                    name: 'Preguntas',
+                    stock: 10,
+                },
+                4: {
+                    id: 4,
+                    name: 'Progreso',
+                    stock: 0,
+                }
+
             }
         }
     }

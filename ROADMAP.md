@@ -67,22 +67,49 @@ wire: -> Nos permite llamar una función dentro del componente.
 .defer: -> Nos permite llamar asíncronamente una función dentro de la vista, pero una vez que se realice una acción en
 el componente.
 
-
 #### Cap 2
+
 ##### Inicializar componentes con x-data y x-ini
+
 ###### Uso
+
 x-data -> Se puede definir desde la vista.
 function -> Podemos sacar de la parte central las funciones y agregarlas en un script específico.
 .away -> Directiva, no se bien que hace.
 
 #### Cap 3
+
 ##### Atributos dinámicos (x-bind)
+
 ###### Uso
+
 x-bind: -> Cambiar atributos html.
 ':' -> reemplaza a 'x-bind:' en los atributos.
 'x-on:' pude ser reemplazo por '@'
 
 #### Cap 4
+
 ##### Sincronizar inputs (x-model)
+
 ###### Uso
+
 x-model: -> Permite sincronizar los valores de un input con las variables de alpinejs.
+
+#### Cap 5
+
+##### Bucles y condicionales
+
+###### Uso
+
+```<template>``` -> Permite mostrar datos de un bucle.
+
+* ej: ```<template x-for="">```
+
+```<template>``` -> Permite mostrar datos en un condicional.
+*ej: ```<template x-if="">```
+
+** Recordar que poner un ```<template>``` dentro de otro ```<template>``` obliga a que el contenido esté envuelto en
+otro tag si no da error de unique root o algo parecido dado que solo acepta una etiqueta padre por template
+
+
+###### Next [Cap 6](https://www.youtube.com/watch?v=7UF0WccR0ss)
