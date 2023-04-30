@@ -1,4 +1,17 @@
 <div>
+    <div x-data="cap6()" @resize.window="verAncho()" x-init="verAncho()">
+        <form action="" @submit.prevent="console.log(mensaje)">
+{{--            <input type="text" x-model="mensaje" class="form-input border-gray-300 m-1 bg-gray-500 text-white">--}}
+            <input type="text" x-model="mensaje" class="form-input border-gray-100 m-1 bg-gray-600 text-white"
+                   @keydown.ctrl.b="console.log(mensaje)"
+            >
+        <button @click.away="console.log('Haciendo clic fuera del botón')">
+            Haz clic
+        </button>
+        </form>
+        <p x-show="ancho">Solo en pantallas xl</p>
+    </div>
+
     <div x-data="cap5()">
         <ul class="text-center text-gray-800">
             {{--            <template x-for="producto in productos">--}}
@@ -134,6 +147,16 @@
                     stock: 0,
                 }
 
+            }
+        }
+    }
+
+    function cap6() {
+        return {
+            mensaje: 'Hola inicial',
+            ancho: true,
+            verAncho(){
+                this.ancho = window.outerWidth > 768
             }
         }
     }

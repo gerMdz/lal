@@ -103,13 +103,34 @@ x-model: -> Permite sincronizar los valores de un input con las variables de alp
 
 ```<template>``` -> Permite mostrar datos de un bucle.
 
-* ej: ```<template x-for="">```
+* ej.: ```<template x-for="">```
 
 ```<template>``` -> Permite mostrar datos en un condicional.
-*ej: ```<template x-if="">```
+* ej.: ```<template x-if="">```
 
 ** Recordar que poner un ```<template>``` dentro de otro ```<template>``` obliga a que el contenido esté envuelto en
 otro tag si no da error de unique root o algo parecido dado que solo acepta una etiqueta padre por template
 
+#### Cap 6
+
+##### Eventos en Alpine
+
+###### Uso
+
+@clic -> 
+
+* Se le puede agregar el modificador `.away` para activar la acción por fuera del tag que lo contiene.
+
+@submit ->
+* Se le puede agregar el modificador `.prevent` para evitar que se envíe el formulario (acción por defecto)
+
+@key...(down, press, up) ->
+* Se le puede agregar el modificador `.enter` para desencadenar la acción del método.
+* Se le puede agregar el modificador `.escape` para desencadenar la acción del método.
+* Se le puede agregar el modificador `.arrow_down` para desencadenar la acción del método.
+* Se le puede agregar el modificador `.ctrl.b` para desencadenar la acción del método.
+
+@resize ->
+* Se le puede agregar el modificador `.window` para estar atento al cambio de pantalla.
 
 ###### Next [Cap 6](https://www.youtube.com/watch?v=7UF0WccR0ss)
