@@ -1,5 +1,13 @@
 <div>
-    <div x-data="cap6()" @resize.window="verAncho()" x-init="verAncho()">
+    <div x-data="cap7()">
+        <button @click="$el.innerHTML='Pero después'" class="btn btn-secondary" >
+            Acción
+        </button>
+        <input type="text" @input="console.log($event.target.value)" class="form-input border-gray-200 m-1 bg-gray-500 text-white">
+        <input type="text" x-model="mensaje" @input="$dispatch('mi-evento', $event.target.value )" class="form-input border-gray-400 m-1 bg-gray-500 text-white">
+    </div>
+
+    <div x-data="cap6()" @resize.window="verAncho()" x-init="verAncho()" >
         <form action="" @submit.prevent="console.log(mensaje)">
 {{--            <input type="text" x-model="mensaje" class="form-input border-gray-300 m-1 bg-gray-500 text-white">--}}
             <input type="text" x-model="mensaje" class="form-input border-gray-100 m-1 bg-gray-600 text-white"
@@ -10,6 +18,7 @@
         </button>
         </form>
         <p x-show="ancho">Solo en pantallas xl</p>
+
     </div>
 
     <div x-data="cap5()">
@@ -41,7 +50,7 @@
         </ul>
     </div>
 
-    <div x-data="{mensaje: $wire.mensaje}" class="m-1 bg-gray-50">
+    <div x-data="{mensaje: $wire.mensaje}" class="m-1 bg-gray-50" @mi-evento.window="mensaje = $event.detail">
         <input type="text" x-model="mensaje" class="form-input border-gray-300 m-1 bg-gray-500 text-white">
         <button @click="$refs.msj.innerText=mensaje" class="btn btn-primary">
             Enviar
@@ -157,6 +166,16 @@
             ancho: true,
             verAncho(){
                 this.ancho = window.outerWidth > 768
+            }
+        }
+    }
+
+    function cap7() {
+
+        return {
+            mensaje: null,
+            verCambio(){
+                console.log(this.target.value)
             }
         }
     }

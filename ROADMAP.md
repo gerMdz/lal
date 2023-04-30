@@ -113,24 +113,21 @@ otro tag si no da error de unique root o algo parecido dado que solo acepta una 
 
 #### Cap 6
 
-##### Eventos en Alpine
+##### Métodos mágicos
 
 ###### Uso
 
-@clic -> 
+$el -> Se referencia a si mismo.
 
-* Se le puede agregar el modificador `.away` para activar la acción por fuera del tag que lo contiene.
+$refs -> Hace referencia a otro elemento indicando (x-ref) individualizándola por `.valor_de_la_referencia`. 
 
-@submit ->
-* Se le puede agregar el modificador `.prevent` para evitar que se envíe el formulario (acción por defecto)
+@event -> Captura el evento.
+* $event.target.value toma el valor.
 
-@key...(down, press, up) ->
-* Se le puede agregar el modificador `.enter` para desencadenar la acción del método.
-* Se le puede agregar el modificador `.escape` para desencadenar la acción del método.
-* Se le puede agregar el modificador `.arrow_down` para desencadenar la acción del método.
-* Se le puede agregar el modificador `.ctrl.b` para desencadenar la acción del método.
+@mi-evento -> Pueden crearse eventos propios.
+* $dispatch -> Envía el evento al navegador.
+* $event.detail -> Toma el valor del evento personalizado.
 
-@resize ->
-* Se le puede agregar el modificador `.window` para estar atento al cambio de pantalla.
+
 
 ###### Next [Cap 6](https://www.youtube.com/watch?v=7UF0WccR0ss)
