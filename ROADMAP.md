@@ -45,7 +45,19 @@ npm run dev
 Creando componentes con el artesano
 
 ```bash
-php artisan make:livewire Nombre_componente
+php artisan make:livewire NombreComponente
+```
+
+Creando modelos con el artesano (incluye migraciones y factories)
+
+```bash
+php artisan make:model NombreModelo -mf
+```
+
+Migrando y regenerando tablas y generando seeders
+
+```bash
+php  artisan migrate:fresh --seed
 ```
 
 Si la vista no queda bien, veamos si agregando en app.blade.php y guest.blade.php
@@ -73,9 +85,8 @@ el componente.
 
 ###### Uso
 
-x-data -> Se puede definir desde la vista.
+x-data -> Se puede definir desde la vista, inicializa el componente.
 function -> Podemos sacar de la parte central las funciones y agregarlas en un script específico.
-.away -> Directiva, no se bien que hace.
 
 #### Cap 3
 
@@ -129,4 +140,4 @@ $refs -> Hace referencia a otro elemento indicando (x-ref) individualizándola p
 * $event.detail -> Toma el valor del evento personalizado.
 
 
-###### Next [Cap 2](https://www.youtube.com/watch?v=VkW70aLNCbQ)
+###### Next [Cap 3](https://www.youtube.com/watch?v=p6QEf2rS5QA)
