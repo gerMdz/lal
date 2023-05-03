@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\VistasTracking;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,6 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', VistasTracking::class)->name('dashboard');
 });
+Route::get('prueba/{nombre}', VistasTracking::class)->name('prueba');
