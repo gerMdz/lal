@@ -60,6 +60,12 @@ Migrando y regenerando tablas y generando seeders
 php  artisan migrate:fresh --seed
 ```
 
+Copiando los componentes de jetstream en resources 
+
+```bash
+php  artisan vendor:publish --tag=jetstream-views
+```
+
 Si la vista no queda bien, veamos si agregando en app.blade.php y guest.blade.php
 
 ```html
@@ -140,4 +146,4 @@ $refs -> Hace referencia a otro elemento indicando (x-ref) individualizándola p
 * $event.detail -> Toma el valor del evento personalizado.
 
 
-###### Next [Cap 3](https://www.youtube.com/watch?v=p6QEf2rS5QA)
+###### Next [Cap 4](https://www.youtube.com/watch?v=D5jJshq25xk&list=PLZ2ovOgdI-kWqCet33O0WezN14KShkwER&index=5)

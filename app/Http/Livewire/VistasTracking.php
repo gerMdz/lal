@@ -7,7 +7,7 @@ use App\Models\VistasTracking as VT;
 
 class VistasTracking extends Component
 {
-//    public $title;
+    public $busqueda = '';
 //
 //
 //    public function mount($nombre)
@@ -16,7 +16,13 @@ class VistasTracking extends Component
 //    }
     public function render()
     {
-        $vistas = VT::all();
+        $vistas = VT::where(
+            'title', 'like','%'.$this->busqueda . '%'
+        )
+            ->orWhere(
+                'description', 'like','%'.$this->busqueda . '%'
+            )
+        ->get();
         return view('livewire.vistas-tracking', compact('vistas'))
             ->layout('layouts.base');
     }
